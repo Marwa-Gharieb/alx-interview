@@ -1,25 +1,26 @@
 #!/usr/bin/python3
-"""
-pascal tringle
-"""
+''' 0-pascal_triangle.py '''
+
 
 def pascal_triangle(n):
+
     '''
-    A func  returns a list of lists of integers representing the Pascal triangle of n
+    Returns a list of lists of integers representing
+    the Pascal’s triangle of n.
     '''
 
-    if n <= 0:
+    if (n <= 0):
         return []
 
-    tringle = [[1]]
+    triangle = [[1]]
     for r in range(1, n):
+        prev = triangle[-1]
         new = [1]
-        prev = tringle[-1]
 
-    for i in range(1, r):
-        new.append(prev[i-1] + prev[i])
+        for i in range(1, r):
+            new.append(prev[i - 1] + prev[i])
 
-    new.append(1)
-    tringle.append(new)
+        new.append(1)
+        triangle.append(new)
 
-    return tringle
+    return triangle
